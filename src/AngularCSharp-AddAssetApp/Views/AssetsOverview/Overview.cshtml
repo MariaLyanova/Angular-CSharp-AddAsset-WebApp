@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container">
+    <div class="row">
+        <h2>Assets Overview</h2>
+    </div>
+
+    <div class="row" ng-controller="AssetIndexController as assetIndexCtrl" ng-cloak>
+        <button type="button" ng-click="assetIndexCtrl.addAsset()" class="btn btn-primary" style="margin-bottom:5px;">Add Asset</button>
+        <div id="assetGrid" ui-grid="assetIndexCtrl.gridOptions" ui-grid-pagination class="asset-grid"></div>
+        <br>
+        <div class="alert alert-danger" ng-show="assetIndexCtrl.errorMessage != null">
+            {{assetIndexCtrl.errorMessage}}
+        </div>
+    </div>
+</div>

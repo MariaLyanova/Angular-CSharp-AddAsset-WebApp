@@ -1,0 +1,24 @@
+﻿<form novalidate
+      name="editForm"
+      ng-submit="editAssetCtrl.form.$valid && editAssetCtrl.save()">
+    <fieldset ng-disabled="editAssetCtrl.saving">
+
+        <div class="modal-header">
+            <h3 class="modal-title">Edit Asset</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="alert alert-danger" ng-show="editAssetCtrl.errorMessage != null">
+                {{editAssetCtrl.errorMessage}}
+            </div>
+
+            <asset-details form-name="editForm" asset="editAssetCtrl.asset"></asset-details>            
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-success" ng-disabled="editForm.$invalid" ng-click="editAssetCtrl.save()">Save</button>
+            <button type="button" class="btn btn-warning" ng-click="$parent.$dismiss()">Cancel</button>
+        </div>
+
+    </fieldset>
+</form>
